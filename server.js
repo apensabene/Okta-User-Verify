@@ -1,11 +1,13 @@
 require('dotenv').config();
 
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express();
+app.use(helmet());
 app.use(express.json());
 
 // Configuration
